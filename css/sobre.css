@@ -1,0 +1,53 @@
+:root{
+
+    --light-blue: #CAE8FF;
+    --blue: #5CB6F9;
+    --primary-blue: #12229D;
+    --secondary-blue: #233DFF;
+    --dark-blue: #050A30;
+    --yellow: #FDBF51;
+}
+
+body{
+    background-color: var(--light-blue) !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* titulo da pagina */
+.titulo{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* texto da pagina no centro */
+.texto{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 2rem;
+}
+
+/* imagem do abaque flutuando no topo*/
+img{
+    position: absolute;
+    top: 10rem;
+    right:0rem;
+    z-index: -99;
+    opacity: 0.8;
+    width: 30ch;
+    /* rotacao da imagem pra direita */
+    transform: translate(-50%, -50%) rotate(40deg);
+}
+
+/* menu superior direito */
+.dropdown button{
+    color:black;
+}
+
+footer{
+    color: black !important;
+    background-color: var(--light-blue) !important; 
+}
