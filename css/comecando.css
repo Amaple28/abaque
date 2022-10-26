@@ -1,0 +1,10 @@
+/* design da contagem regressiva  */
+.tempo {
+    color: #fff;
+    font-size: 15em;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+}

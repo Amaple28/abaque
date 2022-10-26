@@ -1,0 +1,27 @@
+/* div com conteudo da pagina */
+.dificuldade {
+  /* alinhar texto no centro da pagina */
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* formatação do texto da pagina */
+.texto {
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 50px;
+    padding: 50px;
+}
+
+/* formatacao da caixa dos botoes de dificuldade */
+.botoes a{
+    width: 200px;
+    padding: 15px;
+    margin: 20px;
+}

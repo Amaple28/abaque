@@ -1,0 +1,76 @@
+:root{
+
+    --light-blue: #CAE8FF;
+    --blue: #5CB6F9;
+    --primary-blue: #12229D;
+    --secondary-blue: #233DFF;
+    --dark-blue: #050A30;
+    --yellow: #FDBF51;
+}
+
+/* design telas do jogo */
+.tela-jogo {
+    background-color: var(--blue);
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    z-index: 1;
+    
+    /* alinhar caixa no centro da tela */
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* borada da coluna */
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+}
+
+/* alinhar itens no centro de cada coluna */
+.col-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* tamanho do botao de começar */
+.btn-comecar {
+    width: 35%;
+    height: 100%;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+/* tamanho do botao de enviar resposta*/
+.btn-finalizar {
+    width: 35%;
+    height: 100%;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* coluna dos botoes */
+.col-12{
+    width: 70% !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.botao {
+    position: fixed;
+    bottom: 110px;
+}
