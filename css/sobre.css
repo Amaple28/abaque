@@ -32,14 +32,19 @@ body{
 
 /* imagem do abaque flutuando no topo*/
 img{
+    transition: .5s;
     position: absolute;
-    top: 10rem;
-    right:0rem;
-    z-index: -99;
+    bottom: 10rem;
+    left:0rem;
     opacity: 0.8;
     width: 30ch;
     /* rotacao da imagem pra direita */
-    transform: translate(-50%, -50%) rotate(40deg);
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+
+img:hover{
+    left:2rem;
+    transform: translate(-50%, -50%) rotate(25deg);
 }
 
 /* menu superior direito */
