@@ -45,3 +45,11 @@
     background-color: var(--primary-blue);
     color: var(--light-blue);
 }
+
+.swal2-icon-show{
+    border: none !important;
+}
+
+.swal2-icon{
+    border: none !important;
+}

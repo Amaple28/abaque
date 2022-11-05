@@ -253,15 +253,53 @@ function checkAnswers(){
     let tempoFinal = tempo.getTime();
     let tempoTotal = (tempoFinal - tempoInicial) / 1000;
 
-    Swal.fire({
-        title: `${correct > 0 ? 'Parabéns!' : 'Que pena!'}`,
-        text: `${correct > 0 ? 'Você acertou ' + correct + ' de '+ answers.length + ' questões, em apenas ' + tempoTotal + ' segundos!' : 'Você errou todas as questões!'}`,
-        icon: `${correct > 0 ? 'success' : 'error'}`,
-        confirmButtonText: 'Jogar novamente'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            location.reload();
-        }
+    switch (correct) {
+        case 3:
+            Swal.fire({
+                title: `Parabéns!`,
+                text: `Você acertou todas as questões em ${tempoTotal} segundos!`,
+                iconHtml: `<img src="../img/star_eyes-removebg-preview.png" width="150" height="150">`,
+                timer: 5000,
+                timerProgressBar: true,
+            }).then((result) => {
+                window.location.replace("http://localhost:5500/curiosidades_final.html");
+            })
+        break;
+
+        case 2:
+            Swal.fire({
+                title: `Muito bem!`,
+                text: `Você acertou ${correct} questões em ${tempoTotal} segundos!`,
+                iconHtml: `<img src="../img/thumbs_up-removebg-preview.png" width="150" height="150">`,
+                timer: 5000,
+                timerProgressBar: true,
+            }).then((result) => {
+                window.location.replace("http://localhost:5500/curiosidades_final.html");
+            })
+        break;
+
+        case 1:
+            Swal.fire({
+                title: `Quase lá!`,
+                text: `Você acertou ${correct} questões em ${tempoTotal} segundos!`,
+                iconHtml: `<img src="../img/abaque.png" width="150" height="150">`,
+                timer: 5000,
+                timerProgressBar: true,
+            }).then((result) => {
+                window.location.replace("http://localhost:5500/curiosidades_final.html");
+            })
+        break;
+        
+        default:
+            Swal.fire({
+                title: `Que pena!`,
+                text: `Você errou toas as questões em ${tempoTotal} segundos!`,
+                iconHtml: `<img src="../img/scared-removebg-preview.png" width="150" height="150">`,
+                timer: 5000,
+                timerProgressBar: true,
+            }).then((result) => {
+                window.location.replace("http://localhost:5500/curiosidades_final.html");
+            })
+        break;
     }
-    )
 }
