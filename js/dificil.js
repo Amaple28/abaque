@@ -4,13 +4,63 @@ var cronometro;
 
 var answers = [];
 
-const questions = []
-const correctAnswers = [
+const questions = [
     {
-        name: 'options1',
-        answer: '4'
+        name: null,
+        question: "-(√9)+4=?",
+        options:[
+            {
+                answer: "1",
+                correct: true
+            },
+            {
+                answer: "2",
+                correct: false
+            },
+            {
+                answer: "3",
+                correct: false
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "3²+4²=?",
+        options:[
+            {
+                answer: "7²",
+                correct: false
+            },
+            {
+                answer: "5²",
+                correct: true
+            },
+            {
+                answer: "100",
+                correct: false
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "x + √25 = 3² Qual o valor de x?",
+        options:[
+            {
+                answer: "(x = 22)",
+                correct: false
+            },
+            {
+                answer: "(x = 4)",
+                correct: true
+            },
+            {
+                answer: "(x = 32)",
+                correct: false
+            },
+        ]
     },
 ]
+
 
 function iniciarCronometro() {
     cronometro = setInterval('atualizarCronometro()', 1000);
@@ -35,7 +85,22 @@ function exibirTelaJogo() {
 
 function comecar() {
     var tempo = new Date();
-    tempoInicial = tempo.getTime();     
+    tempoInicial = tempo.getTime();
+
+    const elementIndex = Math.floor(Math.random() * questions.length);
+
+    questions[elementIndex].name = "options1";
+
+    document.getElementById("question1").innerHTML = questions[elementIndex].question;
+            
+    document.getElementById(`label1-1`).innerHTML = questions[elementIndex].options[0].answer;
+    document.getElementById(`label1-2`).innerHTML = questions[elementIndex].options[1].answer;
+    document.getElementById(`label1-3`).innerHTML = questions[elementIndex].options[2].answer;
+
+    document.getElementById(`option1-1`).value = questions[elementIndex].options[0].answer;
+    document.getElementById(`option1-2`).value = questions[elementIndex].options[1].answer;
+    document.getElementById(`option1-3`).value = questions[elementIndex].options[2].answer;
+        
 }
 
 function checkFinished(asnwer, name){
@@ -60,7 +125,7 @@ function checkAnswers(){
     let wrong = 0;
 
     answers.forEach(answer => {
-        if(correctAnswers.find(x => x.name == answer.name && x.answer === answer.answer) != undefined){
+        if(questions.find(x => x.name === answer.name).options.find(x => x.answer == answer.answer).correct){
             correct++;
         }else{
             wrong++;
