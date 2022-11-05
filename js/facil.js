@@ -4,21 +4,171 @@ var cronometro;
 
 var answers = [];
 
-const questions = []
-const correctAnswers = [
+const questions = [
     {
-        name: 'options1',
-        answer: '4'
+        name: null,
+        question: "69-2=?",
+        options:[
+            {
+                answer: "67",
+                correct: true
+            },
+            {
+                answer: "19",
+                correct: false
+            },
+            {
+                answer: "100",
+                correct: false
+            },
+        ]
     },
     {
-        name: 'options2',
-        answer: '3'
+        name: null,
+        question: "77+0=?",
+        options:[
+            {
+                answer: "77",
+                correct: true
+            },
+            {
+                answer: "54",
+                correct: false
+            },
+            {
+                answer: "12",
+                correct: false
+            },
+        ]
     },
     {
-        name: 'options3',
-        answer: '1'
+        name: null,
+        question: "64-10=?",
+        options:[
+            {
+                answer: "48",
+                correct: false
+            },
+            {
+                answer: "20",
+                correct: false
+            },
+            {
+                answer: "54",
+                correct: true
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "4+9=?",
+        options:[
+            {
+                answer: "10",
+                correct: false
+            },
+            {
+                answer: "12",
+                correct: false
+            },
+            {
+                answer: "13",
+                correct: true
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "9-9=?",
+        options:[
+            {
+                answer: "4",
+                correct: false
+            },
+            {
+                answer: "0",
+                correct: true
+            },
+            {
+                answer: "1",
+                correct: false
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "5+7=?",
+        options:[
+            {
+                answer: "10",
+                correct: false
+            },
+            {
+                answer: "11",
+                correct: false
+            },
+            {
+                answer: "12",
+                correct: true
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "79-9=?",
+        options:[
+            {
+                answer: "78",
+                correct: false
+            },
+            {
+                answer: "70",
+                correct: true
+            },
+            {
+                answer: "10",
+                correct: false
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "50-7=?",
+        options:[
+            {
+                answer: "57",
+                correct: false
+            },
+            {
+                answer: "43",
+                correct: true
+            },
+            {
+                answer: "14",
+                correct: false
+            },
+        ]
+    },
+    {
+        name: null,
+        question: "90+4=?",
+        options:[
+            {
+                answer: "94",
+                correct: true
+            },
+            {
+                answer: "86",
+                correct: false
+            },
+            {
+                answer: "904",
+                correct: false
+            },
+        ]
     },
 ]
+
 
 function iniciarCronometro() {
     cronometro = setInterval('atualizarCronometro()', 1000);
@@ -43,7 +193,31 @@ function exibirTelaJogo() {
 
 function comecar() {
     var tempo = new Date();
-    tempoInicial = tempo.getTime();     
+    tempoInicial = tempo.getTime();
+    
+    for (let index = 0; index <= 3 ; index++) {
+        const elementIndex = Math.floor(Math.random() * questions.length);
+        console.log(elementIndex);
+        if(questions[elementIndex].name == null){
+            console.log(questions[elementIndex]);
+            questions[elementIndex].name = "options" + (index+1);
+            console.log(questions[elementIndex]);
+
+            document.getElementById("question" + (index+1)).innerHTML = questions[elementIndex].question;
+            
+            document.getElementById(`label${(index+1)}-1`).innerHTML = questions[elementIndex].options[0].answer;
+            document.getElementById(`label${(index+1)}-2`).innerHTML = questions[elementIndex].options[1].answer;
+            document.getElementById(`label${(index+1)}-3`).innerHTML = questions[elementIndex].options[2].answer;
+
+            document.getElementById(`option${(index+1)}-1`).value = questions[elementIndex].options[0].answer;
+            document.getElementById(`option${(index+1)}-2`).value = questions[elementIndex].options[1].answer;
+            document.getElementById(`option${(index+1)}-3`).value = questions[elementIndex].options[2].answer;
+
+        }else{
+            index--;
+        }
+        
+    }
 }
 
 function checkFinished(asnwer, name){
@@ -68,7 +242,7 @@ function checkAnswers(){
     let wrong = 0;
 
     answers.forEach(answer => {
-        if(correctAnswers.find(x => x.name == answer.name && x.answer === answer.answer) != undefined){
+        if(questions.find(x => x.name === answer.name).options.find(x => x.answer == answer.answer).correct){
             correct++;
         }else{
             wrong++;
