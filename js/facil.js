@@ -195,7 +195,7 @@ function comecar() {
     var tempo = new Date();
     tempoInicial = tempo.getTime();
     
-    for (let index = 0; index <= 3 ; index++) {
+    for (let index = 0; index <= 2 ; index++) {
         const elementIndex = Math.floor(Math.random() * questions.length);
         console.log(elementIndex);
         if(questions[elementIndex].name == null){
