@@ -25,32 +25,75 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
-<body onload="iniciarCronometro(); comecar();">
+<body onload="iniciarCronometro()">
     <div class="star-field">
         <div class="layer"></div>
         <div class="layer"></div>
         <div class="layer"></div>
     
-    <div class="corpo">
-        
-        <div id="tela-inicial">
-            <h1 class="tempo" id="tempo"></h1>
-        </div>
+        <div class="corpo">
+            <div id="tela-inicial">
+                <h1 class="tempo" id="tempo"></h1>
+            </div> 
 
-        <div id="tela-jogo" class="tela-jogo" style="display: none;">
-            <div id="quiz"></div>
-            <div id="results"></div>
-            <div class="col-12 botao">
-                <button id="finalizar" type="button" class="btn btn-success btn-finalizar" >Finalizar</button>
+            <div class="container" id="tela-jogo">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="question">
+                            <h1>77+33 = ?</h1>
+                        </div>
+
+                        <input type="radio" class="btn-check" name="options1" id="option1-1" autocomplete="off" value="1" onchange="checkFinished(this.value, this.name)">
+                        <label for="option1-1">100</label>
+
+                        <input type="radio" class="btn-check" name="options1" id="option1-2" autocomplete="off" value="2" onchange="checkFinished(this.value, this.name)">
+                        <label for="option1-2">101</label>
+
+                        <input type="radio" class="btn-check" name="options1" id="option1-3" autocomplete="off" value="4" onchange="checkFinished(this.value, this.name)">
+                        <label for="option1-3">110</label>
+                    </div>
+
+                    <div class="col">
+                        <div class="question">
+                            <h1>7+6 = ?</h1>
+                        </div>
+
+                        <input type="radio" class="btn-check" name="options2" id="option2-1" autocomplete="off" value="4" onchange="checkFinished(this.value, this.name)">
+                        <label for="option2-1">12</label>
+
+                        <input type="radio" class="btn-check" name="options2" id="option2-2" autocomplete="off" value="3" onchange="checkFinished(this.value, this.name)">
+                        <label for="option2-2">13</label>
+
+                        <input type="radio" class="btn-check" name="options2" id="option2-3" autocomplete="off" value="6" onchange="checkFinished(this.value, this.name)">
+                        <label for="option2-3">14</label>
+                    </div>
+
+                    <div class="col">
+                        <div class="question">
+                            <h1>50-7 = ?</h1>
+                        </div>
+
+                        <input type="radio" class="btn-check" name="options3" id="option3-1" autocomplete="off" value="1" onchange="checkFinished(this.value, this.name)">
+                        <label for="option3-1">43</label>
+
+                        <input type="radio" class="btn-check" name="options3" id="option3-2" autocomplete="off" value="8" onchange="checkFinished(this.value, this.name)">
+                        <label for="option3-2">14</label>
+
+                        <input type="radio" class="btn-check" name="options3" id="option3-3" autocomplete="off" value="9" onchange="checkFinished(this.value, this.name)">
+                        <label for="option3-3">57</label>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-        <!-- footer -->
-        <footer>
-            <div class="footer">
-                <p>© 2021-2022 Âbaque</p>
-            </div>
-        </footer>
+            <!-- footer -->
+            <footer>
+                <div class="footer">
+                    <p>© 2021-2022 Âbaque</p>
+                </div>
+            </footer>
+        </div>
     </div>
 
     <script src="js/quiz.js"></script>

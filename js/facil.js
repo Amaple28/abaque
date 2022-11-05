@@ -1,93 +1,93 @@
-// quando clicar no botao comecar, ele vai tirar a opacidadde do textarea e vai ativar o botao finalizar 
-// e vai desativar o botao comecar
 var tempoInicial;
+var tempo = 4;
+var cronometro;
+
+var answers = [];
+
+const questions = []
+const correctAnswers = [
+    {
+        name: 'options1',
+        answer: '4'
+    },
+    {
+        name: 'options2',
+        answer: '3'
+    },
+    {
+        name: 'options3',
+        answer: '1'
+    },
+]
+
+function iniciarCronometro() {
+    cronometro = setInterval('atualizarCronometro()', 1000);
+    document.getElementById('tela-jogo').style.display = 'none';
+}
+
+function atualizarCronometro() {
+    if (tempo > 1) {
+        tempo--;
+        document.getElementById('tempo').innerHTML = tempo;
+    } else {
+        clearInterval(cronometro);
+        exibirTelaJogo();
+        comecar();
+    }
+}
+
+function exibirTelaJogo() {
+    document.getElementById('tela-inicial').style.display = 'none';
+    document.getElementById('tela-jogo').style.display = 'grid';
+}
 
 function comecar() {
-    document.getElementById("resposta").style.opacity = "1";
-    document.getElementById("textarea").disabled = false;
-    document.getElementById("finalizar").disabled = false;
-    document.getElementById("comecar").disabled = true;
     var tempo = new Date();
-    tempoInicial = tempo.getTime();
+    tempoInicial = tempo.getTime();     
 }
 
-// calcular tempo que o usuario demorou para responder a pergunta e mostrar na tela o tempo que ele demorou para responder 
-// e mostrar na tela o tempo que ele demorou para responder
-function finalizar() {
-    var tempo = new Date();
-    var tempoFinal = tempo.getTime();
-    var tempoTotal = (tempoFinal - tempoInicial) / 1000;
-    document.getElementById("tempo").innerHTML = tempoTotal;
+function checkFinished(asnwer, name){
+    let fullAnswer = {
+        name: name,
+        answer: asnwer,
+    }
 
-    //alerta mostrando o tempo
-    alert("Você demorou " + tempoTotal + " segundos para responder a pergunta");
+    if(answers.find(x => x.name == name) == undefined){
+        answers.push(fullAnswer);
+    }else{
+        answers[answers.findIndex(x => x.name == name)] = fullAnswer;
+    }
+
+    if(answers.length == 3){
+        checkAnswers();
+    }
 }
 
-// ALERTAAAS DE ACERTO E ERRO
-function acertou() {
-    // alerta de acerto
-    let timerInterval
+function checkAnswers(){
+    let correct = 0;
+    let wrong = 0;
+
+    answers.forEach(answer => {
+        if(correctAnswers.find(x => x.name == answer.name && x.answer === answer.answer) != undefined){
+            correct++;
+        }else{
+            wrong++;
+        }
+    });
+
+    let tempo = new Date();
+    let tempoFinal = tempo.getTime();
+    let tempoTotal = (tempoFinal - tempoInicial) / 1000;
+
     Swal.fire({
-        title: 'Você Acertou!',
-        padding: '3em',
-        icon: 'success',
-        backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://www.guia55.com.br/wp-content/uploads/2021/08/9O8-84n-Abaco-0-127829369_m.jpg")
-        left top
-        no-repeat
-    `,
-        timer: 2000,
-        timerProgressBar: true,
-
-        didOpen: () => {
-            Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
-            timerInterval = setInterval(() => {
-                b.textContent = Swal.getTimerLeft()
-            }, 100)
-        },
-        willClose: () => {
-            clearInterval(timerInterval)
-        }
+        title: `${correct > 0 ? 'Parabéns!' : 'Que pena!'}`,
+        text: `${correct > 0 ? 'Você acertou ' + correct + ' de '+ answers.length + ' questões, em apenas ' + tempoTotal + ' segundos!' : 'Você errou todas as questões!'}`,
+        icon: `${correct > 0 ? 'success' : 'error'}`,
+        confirmButtonText: 'Jogar novamente'
     }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
+        if (result.isConfirmed) {
+            location.reload();
         }
-    })
-}
-
-function errou() {
-    // alerta de erro
-    let timerInterval
-    Swal.fire({
-        title: 'Você Errou!',
-        padding: '3em',
-        icon: 'error',
-        backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://www.guia55.com.br/wp-content/uploads/2021/08/9O8-84n-Abaco-0-127829369_m.jpg")
-        left top
-        no-repeat
-    `,
-        timer: 2000,
-        timerProgressBar: true,
-
-        didOpen: () => {
-            Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
-            timerInterval = setInterval(() => {
-                b.textContent = Swal.getTimerLeft()
-            }, 100)
-        },
-        willClose: () => {
-            clearInterval(timerInterval)
-        }
-    }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-        }
-    })
+    }
+    )
 }
