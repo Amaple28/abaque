@@ -32,6 +32,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.conteudo p{
+    font-size: 40px;
+}
 h3{
     color: #f5f5f5;
     /* fixar no centro do topo do pagina */
