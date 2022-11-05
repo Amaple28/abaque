@@ -293,7 +293,7 @@ function checkAnswers(){
         default:
             Swal.fire({
                 title: `Que pena!`,
-                text: `Você errou toas as questões em ${tempoTotal} segundos!`,
+                text: `Você errou todas as questões em ${tempoTotal} segundos!`,
                 iconHtml: `<img src="../img/scared-removebg-preview.png" width="150" height="150">`,
                 timer: 5000,
                 timerProgressBar: true,
