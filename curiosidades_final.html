@@ -20,7 +20,7 @@
     <script src="https://kit.fontawesome.com/cd00426036.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="curiosidades()">
+<body>
 
     <div class="star-field">
         <div class="layer"></div>
@@ -29,17 +29,13 @@
 
         <div class="corpo">
 
-            <h3>Você enviou sua resposta em: 00:30:55</h3>
-            <h2>Você Sabia?</h2>
+            <h3 id="titleTime">teste</h3>
 
-            <div class="conteudo">
-                <p class="curiosidades">Você sabia que o nome ENIAC significa Eletronical Numerical Integrator and
-                    Computer, traduzindo, Integrador e Computador Numérico Eletrônico. O ENIAC funcionava através de um
-                    sistema composto por circuitos e válvulas, que ocupavam muito espaço, mas cumprindo seu objetivo de
-                    realizar cálculos complexos. Mesmo assim, nem se comparava à minha velocidade de processamento. Olha
-                    como ele era</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ENIAC_Penn1.jpg/1200px-ENIAC_Penn1.jpg"
-                    width="300px" height="200px">
+            <h2>Você sabia que...</h2>
+
+            <div class="conteudo">  
+                
+                <p class="curiosidades" id="curiosidades"></p>
             </div>
 
         </div>
@@ -59,5 +55,5 @@
             </button>
         </div>
 
-
+        <script src="./js//curiosidades_final.js"></script>
 </body>

@@ -262,6 +262,7 @@ function checkAnswers(){
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
+                localStorage.setItem("tempoTotal", tempoTotal);
                 window.location.replace("http://localhost:5500/curiosidades_final.html");
             })
         break;
@@ -274,6 +275,7 @@ function checkAnswers(){
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
+                localStorage.setItem("tempoTotal", tempoTotal);
                 window.location.replace("http://localhost:5500/curiosidades_final.html");
             })
         break;
@@ -286,6 +288,7 @@ function checkAnswers(){
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
+                localStorage.setItem("tempoTotal", tempoTotal);
                 window.location.replace("http://localhost:5500/curiosidades_final.html");
             })
         break;
@@ -298,6 +301,7 @@ function checkAnswers(){
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
+                localStorage.setItem("tempoTotal", tempoTotal);
                 window.location.replace("http://localhost:5500/curiosidades_final.html");
             })
         break;
