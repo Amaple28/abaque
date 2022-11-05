@@ -1,12 +1,3 @@
-:root{
-
-    --light-blue: #CAE8FF;
-    --blue: #5CB6F9;
-    --primary-blue: #12229D;
-    --secondary-blue: #233DFF;
-    --dark-blue: #050A30;
-    --yellow: #FDBF51;
-}
 
 body{
     background-color: var(--light-blue) !important;

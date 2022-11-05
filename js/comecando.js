@@ -10,6 +10,7 @@ var cronometro;
 // função que inicia o cronômetro
 function iniciarCronometro() {
     cronometro = setInterval('atualizarCronometro()', intervalo);
+    document.getElementById('tela-jogo').style.display = 'none';
 }
 
 // função que atualiza o cronômetro
@@ -26,5 +27,5 @@ function atualizarCronometro() {
 // função que exibe a tela de jogo
 function exibirTelaJogo() {
     document.getElementById('tela-inicial').style.display = 'none';
-    document.getElementById('tela-jogo').style.display = 'block';
+    document.getElementById('tela-jogo').style.display = 'grid';
 }
