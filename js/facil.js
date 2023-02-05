@@ -258,13 +258,13 @@ function checkAnswers(){
             Swal.fire({
                 title: `Parabéns!`,
                 text: `Você acertou todas as questões em ${tempoTotal} segundos!`,
-                iconHtml: `<img src="../img/star_eyes-removebg-preview.png" width="150" height="150">`,
+                iconHtml: `<img src="img/star_eyes-removebg-preview.png" width="150" height="150">`,
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
                 localStorage.setItem("tempoTotal", tempoTotal);
                 //window.location.replace("http://localhost:5500/curiosidades_final.html");
-                window.location.replace("../curiosidades_final.html");
+                window.location.replace("curiosidades_final.html");
             })
         break;
 
@@ -272,13 +272,13 @@ function checkAnswers(){
             Swal.fire({
                 title: `Muito bem!`,
                 text: `Você acertou ${correct} questões em ${tempoTotal} segundos!`,
-                iconHtml: `<img src="../img/thumbs_up-removebg-preview.png" width="150" height="150">`,
+                iconHtml: `<img src="img/thumbs_up-removebg-preview.png" width="150" height="150">`,
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
                 localStorage.setItem("tempoTotal", tempoTotal);
                 //window.location.replace("http://localhost:5500/curiosidades_final.html");
-                window.location.replace("../curiosidades_final.html");
+                window.location.replace("curiosidades_final.html");
             })
         break;
 
@@ -286,13 +286,13 @@ function checkAnswers(){
             Swal.fire({
                 title: `Quase lá!`,
                 text: `Você acertou ${correct} questões em ${tempoTotal} segundos!`,
-                iconHtml: `<img src="../img/abaque.png" width="150" height="150">`,
+                iconHtml: `<img src="img/abaque.png" width="150" height="150">`,
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
                 localStorage.setItem("tempoTotal", tempoTotal);
                 //window.location.replace("http://localhost:5500/curiosidades_final.html");
-                window.location.replace("../curiosidades_final.html");
+                window.location.replace("curiosidades_final.html");
             })
         break;
         
@@ -300,13 +300,13 @@ function checkAnswers(){
             Swal.fire({
                 title: `Que pena!`,
                 text: `Você errou todas as questões em ${tempoTotal} segundos!`,
-                iconHtml: `<img src="../img/scared-removebg-preview.png" width="150" height="150">`,
+                iconHtml: `<img src="img/scared-removebg-preview.png" width="150" height="150">`,
                 timer: 5000,
                 timerProgressBar: true,
             }).then((result) => {
                 localStorage.setItem("tempoTotal", tempoTotal);
                 //window.location.replace("http://localhost:5500/curiosidades_final.html");
-                window.location.replace("../curiosidades_final.html");
+                window.location.replace("curiosidades_final.html");
             })
         break;
     }
