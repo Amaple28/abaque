@@ -145,7 +145,7 @@ function checkAnswers(){
             timerProgressBar: true,
         }).then((result) => {
             //window.location.replace("http://localhost:5500/curiosidades_final.html");
-            window.location.replace("https://amaple28.github.io/curiosidades_final.html");
+            window.location.replace("../curiosidades_final.html");
         })
     }else{
         Swal.fire({
@@ -156,7 +156,7 @@ function checkAnswers(){
             timerProgressBar: true,
         }).then((result) => {
             //window.location.replace("http://localhost:5500/curiosidades_final.html");
-            window.location.replace("https://amaple28.github.io/curiosidades_final.html");
+            window.location.replace("../curiosidades_final.html");
         })
     }
 }
