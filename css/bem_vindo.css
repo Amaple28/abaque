@@ -7,3 +7,14 @@
     margin-bottom: 10%;
 }
 
+@media(max-width:900px){
+    .frase{
+        font-size: 30px !important;
+    }
+}
+
+@media(max-width:600px){
+    .frase{
+        font-size: 25px !important;
+    }
+}

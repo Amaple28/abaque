@@ -25,7 +25,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 65vh;
+    padding-bottom: 2.5rem;
 }
 
 /* imagem do abaque flutuando no topo*/
@@ -53,4 +53,5 @@ img:hover{
 footer{
     color: black !important;
     background-color: var(--light-blue) !important; 
+
 }

@@ -69,6 +69,10 @@ h2{
         padding: 0;
         display: none;
     }
+
+    .curiosidades{
+        font-size: 20px;
+    }
 }
 
 /* footer */

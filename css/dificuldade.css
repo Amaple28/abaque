@@ -19,6 +19,28 @@
     padding: 50px;
 }
 
+@media(max-width:900px){
+    .texto{
+        font-size: 30px;
+    }
+
+    .btn-lg{
+        width:120px !important;
+    }
+
+}
+
+@media(max-width:600px){
+    .texto{
+        font-size: 20px;
+    }
+
+    .btn-lg{
+        width:100px !important;
+    }
+
+}
+
 /* formatacao da caixa dos botoes de dificuldade */
 .botoes a{
     width: 200px;

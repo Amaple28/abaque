@@ -1,5 +1,5 @@
 const texts = [
-"  Nesse mesmo tempo um computador consegue calcular quantas pessoas um peru de 9 KG alimenta!",
+"Nesse mesmo tempo um computador consegue calcular quantas pessoas um peru de 9 KG alimenta!",
 "Nesse mesmo tempo um computador consegue calcular quanto tempo falta para seu aniversário!",
 "Nesse mesmo tempo um computador consegue calcular a matriz inversa, a determinante e fazer multiplicações de várias matrizes!",
 "Nesse mesmo tempo o processador da máquina consegue completar 2,5 bilhões de ciclos de operações!",
@@ -15,6 +15,6 @@ const texts = [
 "Nesse mesmo tempo um computador consegue calcular uma equação Maxwell - Faraday, utilizada nas bases do magnetismo, equação essa que permite que usinas hidrelétricas, turbinas eólicas e até mesmo baterias de carros funcionem.",
 ]
 
-document.getElementById("titleTime").innerHTML = "Você finalizou em "+localStorage.getItem("tempoTotal") + " segundos!";
+document.getElementById("titleTime").innerHTML = "Você finalizou em "+localStorage.getItem("tempoTotal") + " segundos! Você sabia que...";
 
 document.getElementById("curiosidades").innerHTML = texts[Math.floor(Math.random() * texts.length)];
